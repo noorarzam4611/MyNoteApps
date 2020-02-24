@@ -50,27 +50,15 @@ class NoteAdapter(var list: List<NoteModel>?) :
         val dateFormat: SimpleDateFormat? = SimpleDateFormat("EEE ,dd MMM yyyy, hh:mm aaa", locale)
         val listDate: ArrayList<String> = ArrayList()
         val dateParse = dateFormat?.parse(date.toString())
-        val fullday = SimpleDateFormat(
-            "EEEE",
-            locale
-        ).format(dateParse)
+        val fullday = SimpleDateFormat("EEEE", locale).format(dateParse)
         listDate.add(fullday)
-        val dateNumber = SimpleDateFormat(
-            "dd",
-            locale
-        ).format(dateParse)
+        val dateNumber = SimpleDateFormat("dd", locale).format(dateParse)
         listDate.add(dateNumber)
-        val halfMonth = SimpleDateFormat(
-            "MMM",
-            locale
-        ).format(dateParse)
+        val halfMonth = SimpleDateFormat("MMM", locale).format(dateParse)
         listDate.add(halfMonth)
         val year = SimpleDateFormat("yyyy", locale).format(dateParse)
         listDate.add(year)
-        val time = SimpleDateFormat(
-            "hh:mm aaa",
-            locale
-        ).format(dateParse)
+        val time = SimpleDateFormat("hh:mm aaa", locale).format(dateParse)
         listDate.add(time)
 
         return listDate
